@@ -7,10 +7,12 @@ import Navbar from "./components/Navbar";
 import "./App.css";
 import AuthProvider from "./Context/AuthContext";
 import ProductsDetails from "./pages/ProductsDetails";
+import CartProvider from "./Context/CartContext";
 
 function App() {
   return (
     <AuthProvider>
+      <CartProvider>
       <div className="app">
         <Navbar />
         <Routes>
@@ -20,6 +22,7 @@ function App() {
           <Route path="/products/:id" element={<ProductsDetails />} />
         </Routes>
       </div>
+      </CartProvider>
     </AuthProvider>
   );
 }
